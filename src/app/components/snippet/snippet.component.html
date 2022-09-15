@@ -1,0 +1,16 @@
+<div class="pagetitle">
+    <h1>Snippet</h1>
+    <nav>
+       <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/dashboard">Master</a></li>
+          <li class="breadcrumb-item active">Snippet</li>
+       </ol>
+    </nav>
+ </div>
+
+<div *ngFor="let productItem of DataList">
+    {{productItem.name}}
+    <div *ngFor="let item of productItem.ul">
+        <span [innerHtml]="item"></span>
+    </div>
+</div>

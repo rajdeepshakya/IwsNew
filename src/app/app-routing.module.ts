@@ -52,6 +52,10 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>import('./components/dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
+      {
+        path: 'snippet',
+        loadChildren: () =>import('./components/snippet/snippet.module').then((m) => m.SnippetdModule),
+      },
     ],
   },
 

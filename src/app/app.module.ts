@@ -17,7 +17,7 @@ import { FormsEditorsComponent } from './components/forms-editors/forms-editors.
 import { FormsElementsComponent } from './components/forms-elements/forms-elements.component';
 import { FormsLayoutsComponent } from './components/forms-layouts/forms-layouts.component';
 import { HeaderComponent } from './layouts/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IconsBootstrapComponent } from './components/icons-bootstrap/icons-bootstrap.component';
 import { IconsBoxiconsComponent } from './components/icons-boxicons/icons-boxicons.component';
 import { IconsRemixComponent } from './components/icons-remix/icons-remix.component';
@@ -40,6 +40,9 @@ import { TablesGeneralComponent } from './components/tables-general/tables-gener
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TooltipsComponent } from './components/tooltips/tooltips.component';
 import { UsersProfileComponent } from './components/users-profile/users-profile.component';
+import { SnippetComponent } from './components/snippet/snippet.component';
+import { AppHttpInterceptor } from './constants/interceptor';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -79,7 +82,8 @@ import { UsersProfileComponent } from './components/users-profile/users-profile.
     // PagesLoginComponent,
     // PagesError404Component,
     // PagesBlankComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+   // SnippetComponent
   ],
   imports: [
     HttpClientModule,
@@ -87,7 +91,10 @@ import { UsersProfileComponent } from './components/users-profile/users-profile.
     AppRoutingModule,
     //ComponentsModule
   ],
-  providers: [],
+  providers:[DatePipe,
+    { provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true, },
+    { provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
