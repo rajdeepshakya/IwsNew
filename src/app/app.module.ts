@@ -43,6 +43,8 @@ import { UsersProfileComponent } from './components/users-profile/users-profile.
 import { SnippetComponent } from './components/snippet/snippet.component';
 import { AppHttpInterceptor } from './constants/interceptor';
 import { DatePipe } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,7 @@ import { DatePipe } from '@angular/common';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,MatCardModule
     //ComponentsModule
   ],
   providers:[DatePipe,

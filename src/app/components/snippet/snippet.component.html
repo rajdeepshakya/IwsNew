@@ -1,12 +1,12 @@
 <div class="pagetitle">
     <h1>Snippet</h1>
     <nav>
-       <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a routerLink="/dashboard">Master</a></li>
-          <li class="breadcrumb-item active">Snippet</li>
-       </ol>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/dashboard">Master</a></li>
+            <li class="breadcrumb-item active">Snippet</li>
+        </ol>
     </nav>
- </div>
+</div>
 
 <div *ngFor="let productItem of DataList">
     {{productItem.name}}
@@ -14,3 +14,23 @@
         <span [innerHtml]="item"></span>
     </div>
 </div>
+
+<mat-card class="example-card">
+   
+    <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="AddSnippet()">Add Snippet</button>
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option>First option</mat-option>
+          <mat-option>Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field> -->
+</mat-card>

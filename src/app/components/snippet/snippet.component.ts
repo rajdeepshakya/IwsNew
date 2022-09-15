@@ -41,4 +41,7 @@ export class SnippetComponent implements OnInit {
     }
     )
   }
+  AddSnippet(){
+    alert();
+  }
 }

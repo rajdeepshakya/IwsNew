@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseURl:'https://bridgerapi.iwsintl.com/api/v1',
 };
